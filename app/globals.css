@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-void-950 font-sans text-slate-200 antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 15% -10%, rgba(56, 189, 248, 0.1), transparent 60%),
+      radial-gradient(50rem 35rem at 85% 0%, rgba(236, 72, 153, 0.1), transparent 60%);
+    background-repeat: no-repeat;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-white;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: rgba(236, 72, 153, 0.35);
+    color: #fff;
+  }
+
+  /* Visible focus for keyboard users on links and generic controls. */
+  :where(a, summary, [tabindex]):focus-visible {
+    outline: 2px solid theme('colors.electric.300');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply sr-only rounded-full bg-white px-4 py-2 text-sm font-semibold text-void-950;
+  }
+
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-50;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] p-6;
+  }
+
+  /* Long-form content styling for informational pages. */
+  .prose-neon {
+    @apply max-w-3xl text-slate-300;
+  }
+
+  .prose-neon h2 {
+    @apply mt-12 text-2xl font-semibold tracking-wide sm:text-3xl;
+  }
+
+  .prose-neon h3 {
+    @apply mt-8 text-lg font-semibold;
+  }
+
+  .prose-neon p {
+    @apply mt-4 text-base leading-relaxed;
+  }
+
+  .prose-neon ul,
+  .prose-neon ol {
+    @apply mt-4 space-y-2 pl-5;
+  }
+
+  .prose-neon ul {
+    list-style: disc;
+  }
+
+  .prose-neon ol {
+    list-style: decimal;
+  }
+
+  .prose-neon a {
+    @apply text-electric-300 underline decoration-electric-300/40 underline-offset-4 transition hover:text-white hover:decoration-white;
+  }
+
+  .prose-neon code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-[0.85em] text-electric-300;
+  }
+
+  .prose-neon strong {
+    @apply font-semibold text-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
