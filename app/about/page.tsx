@@ -34,7 +34,7 @@ const PRINCIPLES = [
   },
   {
     title: 'No dark patterns',
-    body: 'No accounts, no energy timers, no ads, no purchases, no notifications begging you to return.',
+    body: 'No accounts, no energy timers, no paywalls, no purchases, no notifications begging you to return.',
   },
 ];
 
@@ -133,12 +133,15 @@ export default function AboutPage() {
               through your device&apos;s share sheet.
             </li>
             <li>
-              <strong>No accounts or tracking.</strong> The site sets no cookies and runs no analytics.
-              See the <Link href={ROUTES.privacy}>privacy page</Link> for exactly what is stored.
+              <strong>No accounts or first-party tracking.</strong> The site runs no analytics of its
+              own and builds no profile of you; the only cookies come from advertising, disclosed on
+              the <Link href={ROUTES.privacy}>privacy page</Link>.
             </li>
             <li>
-              <strong>No advertising or paid services.</strong> The game does not require any paid API
-              to run.
+              <strong>No paywalls or purchases.</strong> The game is complete and free: nothing is
+              locked behind a payment, there is no subscription, and no paid API is required to run
+              it. The site carries advertising, disclosed on the{' '}
+              <Link href={ROUTES.privacy}>privacy page</Link>, which is what keeps it that way.
             </li>
           </ul>
         </section>

@@ -46,9 +46,9 @@ export default function TermsPage() {
         <section aria-labelledby="free">
           <h2 id="free">Free to play</h2>
           <p>
-            GlowBound costs nothing. There is no account, no subscription, no in-game purchase and no
-            advertising. Nothing on the site asks for payment details, and you should never enter
-            them here.
+            GlowBound costs nothing to play. There is no account, no subscription and no in-game
+            purchase. Nothing on the site asks for payment details, and you should never enter
+            them here. The site is funded by advertising, which never gates gameplay or content.
           </p>
         </section>
 
@@ -122,8 +122,8 @@ export default function TermsPage() {
         <section aria-labelledby="changes">
           <h2 id="changes">Changes to these terms</h2>
           <p>
-            These terms may be updated as the site changes — for example if advertising or a
-            leaderboard is introduced later. The current version always applies to the site as it is
+            These terms may be updated as the site changes — for example if a leaderboard or new game
+            mode is introduced later. The current version always applies to the site as it is
             published.
           </p>
         </section>

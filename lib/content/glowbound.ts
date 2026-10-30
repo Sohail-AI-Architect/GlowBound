@@ -65,7 +65,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Is GlowBound free to play?',
     answer:
-      'Yes. GlowBound runs in the browser with no download, account, payment or advertisement. Open the game page and press Play.',
+      'Yes. GlowBound runs in the browser with no download, account or payment. The game itself is completely free — open the game page and press Play.',
   },
   {
     question: 'Does GlowBound work on mobile phones?',

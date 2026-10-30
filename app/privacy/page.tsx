@@ -5,7 +5,7 @@ import { breadcrumbSchema } from '@/lib/seo/structured-data';
 import { ROUTES, pageMetadata } from '@/lib/seo/site';
 
 const DESCRIPTION =
-  'GlowBound stores personal bests and a sound preference in your browser only. No cookies, no analytics, no accounts and no advertising.';
+  'GlowBound stores personal bests and a sound preference in your browser only. No accounts and no first-party analytics; Google AdSense advertising funds the site and is disclosed here.';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Privacy Policy — GlowBound',
@@ -64,20 +64,54 @@ export default function PrivacyPage() {
         <section aria-labelledby="not-collected">
           <h2 id="not-collected">What is not collected</h2>
           <ul>
-            <li>No cookies are set.</li>
-            <li>No analytics, tracking pixels or advertising scripts are used.</li>
+            <li>No first-party cookies, tracking pixels or analytics are used.</li>
             <li>No accounts, email addresses or payment details are requested.</li>
-            <li>No fonts, scripts or images are loaded from third-party domains at runtime.</li>
+            <li>Apart from the advertising scripts described below, no fonts, scripts or images are
+              loaded from third-party domains at runtime.</li>
           </ul>
         </section>
 
         <section aria-labelledby="advertising">
-          <h2 id="advertising">Advertising</h2>
+          <h2 id="advertising">Advertising and cookies</h2>
           <p>
-            GlowBound currently shows no advertisements and runs no advertising or tracking scripts.
-            If advertising is introduced later, this page will be updated first to describe the
-            provider, the cookies or identifiers it uses and the consent choices available in your
-            region, before any ad code is enabled.
+            GlowBound is free because it displays advertising, served by Google AdSense. Ads fund the
+            hosting of the site and the game; there are no purchases, subscriptions or paywalls.
+            Advertising is the only third-party service that may set cookies on this site.
+          </p>
+          <p>Google, as a third-party vendor, uses cookies to serve ads on this site:</p>
+          <ul>
+            <li>
+              Google&apos;s use of advertising cookies (including the DoubleClick DART cookie) allows
+              it and its partners to serve ads based on your visits to this site and other sites on
+              the internet. You can opt out of personalised advertising by visiting{' '}
+              <a href="https://adssettings.google.com/" rel="noopener noreferrer nofollow">
+                Google Ads Settings
+              </a>
+              .
+            </li>
+            <li>
+              Third-party vendors may use cookies to serve ads based on your visits to this site and
+              other sites. See{' '}
+              <a href="https://policies.google.com/technologies/cookies" rel="noopener noreferrer nofollow">
+                How Google uses cookies
+              </a>{' '}
+              and{' '}
+              <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer nofollow">
+                How Google uses information from sites or apps that use our services
+              </a>{' '}
+              for details on the cookies used, how they are used and how to opt out of third-party
+              cookies.
+            </li>
+          </ul>
+          <p>
+            Advertising scripts and cookies are loaded only when ads are shown. Disabling
+            personalised ads in your Google account does not remove ads; it stops them being
+            personalised. You can also opt out of many other ad networks through the industry tools
+            linked from{' '}
+            <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer nofollow">
+              Google&apos;s advertising policies
+            </a>
+            .
           </p>
         </section>
 
@@ -118,8 +152,9 @@ export default function PrivacyPage() {
         <section aria-labelledby="children">
           <h2 id="children">Children</h2>
           <p>
-            GlowBound does not collect personal information from anyone, including children. There are
-            no chat features, no user-generated content and no advertising.
+            GlowBound does not collect personal information from anyone, including children. There
+            are no chat features and no user-generated content, and no account system through which
+            a child could hand over data.
           </p>
         </section>
 
