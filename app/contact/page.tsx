@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AD_SLOTS, AdBanner } from '@/components/AdBanner';
 import { ButtonLink } from '@/components/ui/Button';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { breadcrumbSchema } from '@/lib/seo/structured-data';
@@ -108,6 +109,8 @@ export default function ContactPage() {
           </ButtonLink>
         </div>
       </article>
+
+      <AdBanner slot={AD_SLOTS.content} className="mt-12" />
 
       <StructuredData id="breadcrumb-jsonld" data={breadcrumbSchema(BREADCRUMBS)} />
     </div>

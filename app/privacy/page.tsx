@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AD_SLOTS, AdBanner } from '@/components/AdBanner';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { breadcrumbSchema } from '@/lib/seo/structured-data';
 import { ROUTES, pageMetadata } from '@/lib/seo/site';
@@ -171,6 +172,8 @@ export default function PrivacyPage() {
           . Ready to play? <Link href={ROUTES.game}>Open GlowBound</Link>.
         </p>
       </article>
+
+      <AdBanner slot={AD_SLOTS.content} className="mt-12" />
 
       <StructuredData id="breadcrumb-jsonld" data={breadcrumbSchema(BREADCRUMBS)} />
     </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AD_SLOTS, AdBanner } from '@/components/AdBanner';
 import { GlowBoundGame } from '@/components/game/GlowBoundGame';
 import { ControlLegend } from '@/components/game/GameControls';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -51,6 +52,8 @@ export default function GlowBoundPage() {
       <div className="mt-8">
         <GlowBoundGame />
       </div>
+
+      <AdBanner slot={AD_SLOTS.game} className="mt-6" />
 
       <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
         <section aria-labelledby="controls-heading">

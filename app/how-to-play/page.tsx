@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AD_SLOTS, AdBanner } from '@/components/AdBanner';
 import { ControlLegend } from '@/components/game/GameControls';
 import { ButtonLink } from '@/components/ui/Button';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -234,6 +235,8 @@ export default function HowToPlayPage() {
           Play GlowBound
         </ButtonLink>
       </div>
+
+      <AdBanner slot={AD_SLOTS.content} className="mt-14" />
 
       <StructuredData id="faq-jsonld" data={faqSchema(FAQ_ITEMS)} />
       <StructuredData id="breadcrumb-jsonld" data={breadcrumbSchema(BREADCRUMBS)} />

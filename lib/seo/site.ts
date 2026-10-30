@@ -4,10 +4,14 @@ import type { Metadata } from 'next';
  * Canonical production origin.
  *
  * Set `NEXT_PUBLIC_SITE_URL` to the real origin (e.g. `https://glowbound.com`,
- * no trailing slash) in Vercel's environment variables before the production
+ * no trailing slash) in Vercel's environment variables **before** the production
  * deployment. On Vercel, `VERCEL_PROJECT_PRODUCTION_URL` (the stable production
  * domain of the project) is used automatically when the explicit variable is
  * missing.
+ *
+ * Both variables are inlined at build time, so changing either one requires a
+ * rebuild — restarting the server alone has no effect. Values are also accepted
+ * without a scheme (`glowbound.com`) and are normalised to `https://`.
  *
  * If neither is available the site falls back to `http://localhost:3000` for
  * local development and marks every page `noindex, nofollow` (see
@@ -37,8 +41,15 @@ function isReservedHost(hostname: string): boolean {
 
 function normalizeOrigin(value: string | undefined): string | null {
   if (!value) return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  // Accept values pasted without a scheme (e.g. `glowbound.com` copied from a
+  // DNS panel) instead of silently discarding them and falling back to another
+  // origin — a mistyped variable would otherwise change canonical URLs without
+  // any visible sign of the problem.
+  const candidate = /^[a-z][a-z\d+.-]*:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
   try {
-    const url = new URL(value);
+    const url = new URL(candidate);
     if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
     if (isReservedHost(url.hostname)) return null;
     return url.origin;

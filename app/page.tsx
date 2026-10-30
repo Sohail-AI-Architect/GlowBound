@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AD_SLOTS, AdBanner } from '@/components/AdBanner';
 import { ButtonLink } from '@/components/ui/Button';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { HOME_FAQ_ITEMS } from '@/lib/content/glowbound';
@@ -194,6 +195,10 @@ export default function HomePage() {
           .
         </p>
       </section>
+
+      <div className="mx-auto max-w-3xl px-4 pb-6 sm:px-6">
+        <AdBanner slot={AD_SLOTS.content} />
+      </div>
 
       <StructuredData id="home-faq-jsonld" data={faqSchema(HOME_FAQ_ITEMS)} />
     </>

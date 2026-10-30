@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Orbitron } from 'next/font/google';
 import './globals.css';
+import { AdSenseScript } from '@/components/AdBanner';
+import { CookieConsent } from '@/components/CookieConsent';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -86,8 +88,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
-        <StructuredData id="website-jsonld" data={webSiteSchema()} />
-      </body>
+      <StructuredData id="website-jsonld" data={webSiteSchema()} />
+      <AdSenseScript />
+      <CookieConsent />
+    </body>
     </html>
   );
 }
