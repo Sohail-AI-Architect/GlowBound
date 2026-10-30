@@ -4,6 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'GlowBound - Play Free Neon Browser Arcade Game',
   description: 'Experience high-speed neon arcade action right in your browser! Play GlowBound live now.',
+  metadataBase: new URL('https://glow-bound.vercel.app'),
   openGraph: {
     title: 'GlowBound - Neon Browser Arcade Game',
     description: 'Play high-performance neon arcade game online for free.',
